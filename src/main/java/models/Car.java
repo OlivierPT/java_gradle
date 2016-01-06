@@ -12,6 +12,9 @@ public class Car {
         this.carBrand = carBrand;
     }
 
+    public Car() {
+    }
+
     public CarBrand getCarBrand() {
         return carBrand;
     }

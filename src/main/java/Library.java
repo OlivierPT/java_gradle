@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 import enums.CarBrand;
 import models.Car;
 
@@ -15,6 +16,18 @@ public class Library {
     public static void main(String[] args) {
         System.out.println("Yay project setup done! Hello Gradle!!");
         Car c = new Car(CarBrand.AUDI);
-        System.out.println("The car brand is "+c.getCarBrand());
+        System.out.println("The car brand is " + c.getCarBrand());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        String carJson =
+                "{ \"carBrand\" : \"TATA\"}";
+        try {
+            Car car = objectMapper.readValue(carJson, Car.class);
+            System.out.println("The car brand is " + car.getCarBrand());
+        } catch (Exception e) {
+            System.out.println("Unable to deserialize");
+        }
+
     }
 }
