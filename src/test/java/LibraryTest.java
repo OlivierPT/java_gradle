@@ -1,3 +1,5 @@
+import enums.CarBrand;
+import models.Car;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -11,8 +13,7 @@ import static org.junit.Assert.assertTrue;
 public class LibraryTest {
     @Test
     public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
-        System.out.print("Test executing");
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+        Car c = new Car(CarBrand.AUDI);
+        assertTrue("The brand of the car should be 'AUDI'", (c.getCarBrand() == CarBrand.AUDI));
     }
 }
